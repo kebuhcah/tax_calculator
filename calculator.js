@@ -128,7 +128,7 @@ class TaxCalculation extends React.Component {
                 className: "row"
             },
             el("div", {
-                    className: "col col-6"
+                    className: "col col-md-6 col-sm-12 col-12"
                 },
                 el("div", {
                         className: "card"
@@ -164,7 +164,7 @@ class TaxCalculation extends React.Component {
                         className: "card-footer"
                     }, "Total: " + dollar(oldState + oldCityVal + oldMansionVal)))),
             el("div", {
-                    className: "col col-6"
+                    className: "col col-md-6 col-sm-12 col-12"
                 },
                 el("div", {
                         className: "card"
