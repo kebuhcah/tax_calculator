@@ -6,8 +6,8 @@ class TodoApp extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            items: [],
-            text: ''
+            value: 1000000,
+            text: '1000000'
         };
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -45,7 +45,7 @@ class TodoApp extends React.Component {
                         }, "Calculate"))
                 )),
             el(TodoList, {
-                items: this.state.items
+                value: this.state.value
             }));
     }
 
@@ -62,13 +62,9 @@ class TodoApp extends React.Component {
             return;
         }
 
-        const newItem = {
-            text: this.state.text,
-            id: Date.now()
-        };
         this.setState(state => ({
-            items: state.items.concat(newItem),
-            text: ''
+            text: this.state.text,
+            value: parseFloat(this.state.text)
         }));
     }
 
@@ -76,9 +72,7 @@ class TodoApp extends React.Component {
 
 class TodoList extends React.Component {
     render() {
-        return el("ul", null, this.props.items.map(item => el("li", {
-            key: item.id
-        }, item.text)));
+        return el("h4", null, this.props.value / 2);
     }
 
 }
