@@ -18,7 +18,9 @@ class TaxApp extends React.Component {
     }
 
     render() {
-        return el("div", null, el("h3", null, "Transfer Tax Calculator"),
+        return el("div", null, el("h3", null, el("a",
+                                                {href: "#", target: "_blank"},
+                                                "Transfer Tax Calculator")),
             el("form", {
                     onSubmit: this.handleSubmit
                 }, el("label", {
